@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cysip5cwrst2v"]
+[gd_scene load_steps=3 format=3 uid="uid://cysip5cwrst2v"]
+
+[ext_resource type="PackedScene" uid="uid://dhpmup5ka6ybi" path="res://Scenes/player.tscn" id="1_vswm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otp6y"]
 
@@ -23,3 +25,6 @@ offset_right = 10.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Player" parent="." instance=ExtResource("1_vswm8")]
+position = Vector2(507, 249)
