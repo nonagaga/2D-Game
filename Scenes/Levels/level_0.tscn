@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://doupwpdv23mp6"]
+[gd_scene load_steps=7 format=3 uid="uid://doupwpdv23mp6"]
 
 [ext_resource type="Script" path="res://Scripts/tempBGscript.gd" id="1_chfgy"]
 [ext_resource type="PackedScene" uid="uid://dhpmup5ka6ybi" path="res://Scenes/player.tscn" id="1_e82u5"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_v865c"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="3_ltln4"]
 [ext_resource type="PackedScene" uid="uid://c82x27b07gxu8" path="res://Scenes/TileMaps/4_bit_tilemap.tscn" id="4_cdjro"]
+[ext_resource type="PackedScene" uid="uid://ctx01hgnq81rj" path="res://Scenes/Enemies/boom_guy.tscn" id="6_uihay"]
 
 [node name="Level 0" type="Node2D"]
 
@@ -18,9 +19,10 @@ script = ExtResource("1_chfgy")
 player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_e82u5")]
-jump_height = 25.0
+position = Vector2(8, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, 0)
 zoom = Vector2(8, 8)
 position_smoothing_speed = 10.0
 
@@ -28,6 +30,7 @@ position_smoothing_speed = 10.0
 script = ExtResource("2_v865c")
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
+position = Vector2(8, 0)
 script = ExtResource("3_ltln4")
 priority_override = false
 priority = 0
@@ -53,3 +56,15 @@ layer_0/tile_data = PackedInt32Array(65530, 524288, 0, 65531, 524288, 0, 65532, 
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="Boom Guy" parent="." instance=ExtResource("6_uihay")]
+position = Vector2(-10, 1)
+
+[node name="Boom Guy2" parent="." instance=ExtResource("6_uihay")]
+position = Vector2(46, -9)
+
+[node name="Boom Guy3" parent="." instance=ExtResource("6_uihay")]
+position = Vector2(46, -9)
+
+[node name="Boom Guy4" parent="." instance=ExtResource("6_uihay")]
+position = Vector2(46, -9)
