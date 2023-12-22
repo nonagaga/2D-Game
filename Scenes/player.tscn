@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhpmup5ka6ybi"]
+[gd_scene load_steps=6 format=3 uid="uid://dhpmup5ka6ybi"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bbefa"]
 [ext_resource type="Texture2D" uid="uid://yvdjyybtgyal" path="res://Assets/Images/4 bit player.png" id="2_qncic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwqe6"]
 size = Vector2(2, 2)
+
+[sub_resource type="Gradient" id="Gradient_su3aa"]
+offsets = PackedFloat32Array(0, 0.396104, 0.532468, 0.720779, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.415584, 0.415584, 0.415584, 1, 0.309985, 0.309985, 0.309985, 1, 0.211199, 0.211199, 0.211199, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xxqw0"]
+gradient = SubResource("Gradient_su3aa")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
@@ -19,3 +29,8 @@ texture = ExtResource("2_qncic")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_kwqe6")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.5, 0.5)
+energy = 0.7
+texture = SubResource("GradientTexture2D_xxqw0")
