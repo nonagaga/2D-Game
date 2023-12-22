@@ -31,7 +31,6 @@ grow_vertical = 2
 
 [node name="Player" parent="." instance=ExtResource("1_vswm8")]
 position = Vector2(507, 249)
-collision_mask = 6
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(507, 249)
