@@ -14,6 +14,7 @@ extends CharacterBody2D
 @export var jump_height : float
 @export var jump_time_to_peak : float
 @export var jump_time_to_descent : float
+@export var shorthop_velocity_decrease : float
 
 @export_subgroup("Jump Timers")
 @export var jump_buffer_length : float = 0.1
@@ -74,7 +75,7 @@ func _physics_process(delta):
 	
 	#Controls how the variable jump height/short hop works
 	if Input.is_action_just_released("jump") and velocity.y < 0:
-		velocity.y += 40
+		velocity.y += shorthop_velocity_decrease
 	
 	
 	

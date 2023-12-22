@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctx01hgnq81rj"]
+
+[ext_resource type="Script" path="res://Scripts/BoomGuy.gd" id="1_doxqr"]
+[ext_resource type="Texture2D" uid="uid://yvdjyybtgyal" path="res://Assets/Images/4 bit player.png" id="2_lebhf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84y6p"]
+size = Vector2(40, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kkhco"]
+radius = 360.0
+
+[sub_resource type="Gradient" id="Gradient_h1dv2"]
+offsets = PackedFloat32Array(0, 0.11039, 0.298701, 0.571429, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.750123, 0.750123, 0.750123, 1, 0.506493, 0.506493, 0.506493, 1, 0.25974, 0.25974, 0.25974, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2gjvw"]
+gradient = SubResource("Gradient_h1dv2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Boom Guy" type="CharacterBody2D"]
+scale = Vector2(0.025, 0.025)
+script = ExtResource("1_doxqr")
+boom_force = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(40, 40.5)
+texture = ExtResource("2_lebhf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.90735e-06, 1.90735e-06)
+shape = SubResource("RectangleShape2D_84y6p")
+
+[node name="Boom Trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boom Trigger"]
+position = Vector2(1.90735e-06, 1.90735e-06)
+shape = SubResource("CircleShape2D_kkhco")
+
+[node name="Boom Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Boom Light" type="PointLight2D" parent="."]
+scale = Vector2(11.3, 11.3)
+texture = SubResource("GradientTexture2D_2gjvw")
+
+[connection signal="body_entered" from="Boom Trigger" to="." method="_on_boom_trigger_body_entered"]
+[connection signal="timeout" from="Boom Timer" to="." method="_on_boom_timer_timeout"]

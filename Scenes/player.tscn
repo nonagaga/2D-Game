@@ -19,9 +19,11 @@ fill_to = Vector2(0.5, 0)
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_bbefa")
-jump_height = 200.0
+wall_jump_multiplier = 2.0
+jump_height = 10.0
 jump_time_to_peak = 0.3
 jump_time_to_descent = 0.3
+shorthop_velocity_decrease = 20.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qncic")
