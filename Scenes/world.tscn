@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dhpmup5ka6ybi" path="res://Scenes/player.tscn" id="1_vswm8"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_6stwm"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="3_bpftr"]
-[ext_resource type="PackedScene" uid="uid://c82x27b07gxu8" path="res://Scenes/4_bit_tilemap.tscn" id="4_y6eom"]
+[ext_resource type="PackedScene" uid="uid://c82x27b07gxu8" path="res://Scenes/TileMaps/4_bit_tilemap.tscn" id="4_y6eom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otp6y"]
 

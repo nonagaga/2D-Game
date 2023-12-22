@@ -23,7 +23,9 @@ enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
 folder_colors={
 "res://Assets/Images/": "teal",
-"res://Assets/TileSets/": "pink"
+"res://Assets/TileSets/": "pink",
+"res://Scenes/Levels/": "blue",
+"res://Scenes/TileMaps/": "pink"
 }
 
 [input]
