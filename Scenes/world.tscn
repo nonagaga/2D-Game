@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cysip5cwrst2v"]
+[gd_scene load_steps=5 format=3 uid="uid://cysip5cwrst2v"]
 
 [ext_resource type="PackedScene" uid="uid://dhpmup5ka6ybi" path="res://Scenes/player.tscn" id="1_vswm8"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_6stwm"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="3_bpftr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otp6y"]
 
@@ -28,3 +30,32 @@ grow_vertical = 2
 
 [node name="Player" parent="." instance=ExtResource("1_vswm8")]
 position = Vector2(507, 249)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(507, 249)
+position_smoothing_speed = 10.0
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("2_6stwm")
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+position = Vector2(507, 249)
+script = ExtResource("3_bpftr")
+priority_override = false
+priority = 0
+zoom = Vector2(1, 1)
+follow_mode = 2
+follow_target = NodePath("../Player")
+follow_parameters/target_offset = Vector2(0, 0)
+follow_parameters/damping = false
+frame_preview = true
+limit/draw_limits = false
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+limit/smoothed = false
+limit/tile_map_limit_target = NodePath("")
+tween_parameters = null
+tween_on_load = true
+inactive_update_mode = 0
