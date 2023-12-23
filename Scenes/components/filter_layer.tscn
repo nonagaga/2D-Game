@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bke33scpnymg8"]
+
+[ext_resource type="Script" path="res://Scripts/tempBGscript.gd" id="1_xcgto"]
+
+[node name="Filter Layer" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -135.0
+offset_top = -90.0
+offset_right = 156.0
+offset_bottom = 77.0
+color = Color(0.247059, 0.309804, 0.937255, 1)
+script = ExtResource("1_xcgto")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)

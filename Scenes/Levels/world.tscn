@@ -4,30 +4,9 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_ginf0"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="3_wv2kn"]
 [ext_resource type="PackedScene" uid="uid://c0stuot1tssie" path="res://Scenes/TileMaps/64_pixel_tilemap.tscn" id="4_w3bwr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_otp6y"]
+[ext_resource type="Script" path="res://Scripts/tempBGscript.gd" id="5_avtne"]
 
 [node name="World" type="Node2D"]
-
-[node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(575, 638)
-scale = Vector2(58.0494, 0.980544)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource("RectangleShape2D_otp6y")
-
-[node name="ColorRect" type="ColorRect" parent="Floor"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Player" parent="." instance=ExtResource("1_0671i")]
 position = Vector2(507, 249)
@@ -63,3 +42,14 @@ inactive_update_mode = 0
 
 [node name="64 pixel tilemap" parent="." instance=ExtResource("4_w3bwr")]
 layer_0/tile_data = PackedInt32Array(589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 655359, 0, 0, 655358, 0, 0, 589822, 0, 0, 524286, 0, 0, 458750, 0, 0, 393214, 0, 0, 327678, 0, 0, 262142, 0, 0, 196606, 0, 0, 131070, 0, 0, 65534, 0, 0, -2, 0, 0, -65538, 0, 0, -131074, 0, 0, -196610, 0, 0, 589841, 0, 0, 524306, 131072, 0, 458771, 131072, 0, 393236, 131072, 0, 327701, 131072, 0, 262166, 131072, 0, 196631, 131072, 0, 131096, 131072, 0, 65561, 131072, 0, 26, 131072, 0, -65509, 131072, 0, -131044, 131072, 0, -196579, 131072, 0, -262114, 131072, 0, -327649, 131072, 0, -393184, 131072, 0, -458719, 131072, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, -393183, 0, 0, -327647, 0, 0, -262111, 0, 0, -196575, 0, 0, -131039, 0, 0, -65503, 0, 0, 33, 0, 0, 65569, 0, 0, 131105, 0, 0, 196641, 0, 0, 262177, 0, 0, 327713, 0, 0, 393249, 0, 0, 458785, 0, 0, 524321, 0, 0, 196635, 0, 0, 262172, 0, 0, 327709, 0, 0, 393246, 0, 0, 458783, 0, 0, 524320, 0, 0, 196637, 0, 0, 131102, 0, 0, 65567, 0, 0, 32, 0, 0, 327711, 0, 0, 262176, 0, 0, 458781, 0, 0, 524316, 0, 0, 327707, 0, 0, 393242, 0, 0, 458777, 0, 0, 524312, 0, 0, 131098, 0, 0, -262112, 0, 0, -131042, 0, 0, -65505, 0, 0, 28, 0, 0, 65565, 0, 0, 262168, 0, 0, 327705, 0, 0, 393238, 0, 0, 458775, 0, 0, 524308, 0, 0)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -135.0
+offset_top = -90.0
+offset_right = 156.0
+offset_bottom = 77.0
+color = Color(0.247059, 0.309804, 0.937255, 1)
+script = ExtResource("5_avtne")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
