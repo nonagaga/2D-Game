@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0stuot1tssie"]
+
+[ext_resource type="TileSet" uid="uid://bt07ou5mnm0k2" path="res://Assets/TileSets/64 bit tilemap.tres" id="1_m1ao0"]
+
+[node name="64 pixel tilemap" type="TileMap"]
+tile_set = ExtResource("1_m1ao0")
+format = 2
