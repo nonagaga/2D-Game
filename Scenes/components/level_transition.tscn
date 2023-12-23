@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://duhttilp5pu7g"]
+
+[ext_resource type="Script" path="res://Scenes/components/Level Transition.gd" id="1_cwsrb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0kycl"]
+
+[sub_resource type="Gradient" id="Gradient_su3aa"]
+offsets = PackedFloat32Array(0, 0.396104, 0.532468, 0.720779, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.415584, 0.415584, 0.415584, 1, 0.309985, 0.309985, 0.309985, 1, 0.211199, 0.211199, 0.211199, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w1pa2"]
+gradient = SubResource("Gradient_su3aa")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Level Transition" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_cwsrb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0kycl")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.5, 0.5)
+color = Color(1, 0, 1, 1)
+energy = 0.7
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_w1pa2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

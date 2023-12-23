@@ -6,12 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwqe6"]
 size = Vector2(2, 2)
 
-[sub_resource type="Gradient" id="Gradient_su3aa"]
+[sub_resource type="Gradient" id="Gradient_r2u8n"]
 offsets = PackedFloat32Array(0, 0.396104, 0.532468, 0.720779, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.415584, 0.415584, 0.415584, 1, 0.309985, 0.309985, 0.309985, 1, 0.211199, 0.211199, 0.211199, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xxqw0"]
-gradient = SubResource("Gradient_su3aa")
+gradient = SubResource("Gradient_r2u8n")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
@@ -19,18 +19,22 @@ fill_to = Vector2(0.5, 0)
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_bbefa")
+MAX_SPEED = 100.0
+ACCELERATION = 20.0
 jump_height = 200.0
 jump_time_to_peak = 0.3
 jump_time_to_descent = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.98023e-08, -2.98023e-08)
+scale = Vector2(2, 2)
 texture = ExtResource("2_qncic")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_kwqe6")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(0.5, 0.5)
 energy = 0.7
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_xxqw0")
